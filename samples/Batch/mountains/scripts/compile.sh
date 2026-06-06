@@ -71,7 +71,7 @@ cp "${SOLUTION}" "${SANDBOX}/${prog}"
 
 pushd "${SANDBOX}" > /dev/null
 if [ "${ext}" == "cpp" ] ; then
-    [ -z "${CPP_STD_OPT+x}" ] && CPP_STD_OPT="--std=gnu++14"
+    [ -z "${CPP_STD_OPT+x}" ] && CPP_STD_OPT="--std=gnu++17"
     [ -z "${CPP_OPTS+x}" ] && CPP_OPTS="-DEVAL ${CPP_STD_OPT} -Wall -Wextra -Wshadow -O2"
     if "${HAS_GRADER}"; then
         cp "${GRADER_LANG_DIR}/${PROBLEM_NAME}.h" "${GRADER_LANG_DIR}/grader.cpp" "${SANDBOX}"

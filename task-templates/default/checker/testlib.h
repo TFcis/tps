@@ -2595,15 +2595,21 @@ NORETURN void InStream::quit(TResult result, const char* msg)
         case _dirt:
         case _unexpected_eof:
             color = LightRed;
-            errorName = RESULT_MESSAGE_WRONG;
+            errorName = std::string(msg);
+            if (errorName.empty())
+                errorName = RESULT_MESSAGE_WRONG;
             break;
         case _fail:
             color = LightMagenta;
-            errorName = RESULT_MESSAGE_FAIL;
+            errorName = std::string(msg);
+            if (errorName.empty())
+                errorName = RESULT_MESSAGE_FAIL;
             break;
         case _sv:
             color = LightMagenta;
-            errorName = RESULT_MESSAGE_SECURITY_VIOLATION;
+            errorName = std::string(msg);
+            if (errorName.empty())
+                errorName = RESULT_MESSAGE_SECURITY_VIOLATION;
             break;
         case _pv:
             color = LightMagenta;
@@ -2617,7 +2623,9 @@ NORETURN void InStream::quit(TResult result, const char* msg)
             else
                 pointsStr = format("%.4lf", __testlib_points);
             color = LightYellow;
-            errorName = RESULT_MESSAGE_PARTIALLY_CORRECT;
+            errorName = std::string(msg);
+            if (errorName.empty())
+                errorName = RESULT_MESSAGE_PARTIALLY_CORRECT;
             break;
         default:
             if (result >= _partially)

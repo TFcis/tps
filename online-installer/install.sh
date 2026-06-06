@@ -3,14 +3,14 @@
 # Adopted from oh-my-zsh standalone installation script which is licensed under MIT License.
 #
 # This script should be run via curl:
-#   bash -c "$(curl -fsSL https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh)"
+#   bash -c "$(curl -fsSL https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh)"
 # or via wget:
-#   bash -c "$(wget -qO- https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh)"
+#   bash -c "$(wget -qO- https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh)"
 # or via fetch:
-#   bash -c "$(fetch -o - https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh)"
+#   bash -c "$(fetch -o - https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh)"
 #
 # As an alternative, you can first download the install script and run it afterwards:
-#   wget https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh
+#   wget https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh
 #   bash online-installer/install.sh
 
 set -euo pipefail
@@ -30,7 +30,7 @@ HOME="${HOME:-$(eval echo ~$USER)}"
 # Directory to store TPS code repository in
 TPS_LOCAL_REPO="${TPS_LOCAL_REPO:-$HOME/.local/share/tps}"
 
-TPS_REMOTE_REPO_GIT_URL="${TPS_REMOTE_REPO_GIT_URL:-https://github.com/ioi-2017/tps.git}"
+TPS_REMOTE_REPO_GIT_URL="${TPS_REMOTE_REPO_GIT_URL:-https://github.com/TFcis/tps.git}"
 TPS_REMOTE_BRANCH="${TPS_REMOTE_BRANCH:-master}"
 
 function command_exists {
@@ -122,7 +122,7 @@ function setup_tps {
 	echo -n "Installing TPS system-wide"
 	echo -n " ########################## "
 	echo
-	
+
 	cd "${TPS_LOCAL_REPO}"
 
 	install_exit_code=0
@@ -131,7 +131,7 @@ function setup_tps {
 		sudo -k bash "install-tps.sh" || install_exit_code=$?
 	else
 		bash "install-tps.sh" || install_exit_code=$?
-	fi 
+	fi
 
 	# Checking if installation was successful
 	if [ "${install_exit_code}" -ne "0" ]; then

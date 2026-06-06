@@ -21,7 +21,7 @@ Make sure you have the `curl` command installed.
 Then, run the following command to install TPS on Linux/MacOS/Windows (with WSL):
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh)"
 ```
 
 This will add `tps` command to PATH and also adds bash completion for it. For other installation methods 

@@ -41,7 +41,7 @@ It is possible to install the TPS command-line interface
 Run the following command to install TPS on Linux/MacOS/Windows (with WSL):
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ioi-2017/tps/master/online-installer/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TFcis/tps/master/online-installer/install.sh)"
 ```
 
 Online installer assumes you have `git` installed in your system.
@@ -53,7 +53,7 @@ You can customize its installation
 | Variable                  | Description                               | Default                               |
 | ------------------------- | ----------------------------------------- | ------------------------------------- |
 | `TPS_LOCAL_REPO`          | Directory to store TPS code repository in | `$HOME/.local/share/tps`              |
-| `TPS_REMOTE_REPO_GIT_URL` | Git URL of the remote repo                | `https://github.com/ioi-2017/tps.git` |
+| `TPS_REMOTE_REPO_GIT_URL` | Git URL of the remote repo                | `https://github.com/TFcis/tps.git` |
 | `TPS_REMOTE_BRANCH`       | Branch to install from                    | `master`                              |
 
 ### Manual installation

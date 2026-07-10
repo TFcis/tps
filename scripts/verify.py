@@ -170,7 +170,7 @@ def load_data(json_file, required_keys=()):
         with open(json_file, 'r') as f:
             try:
                 data = json.load(f, object_pairs_hook=error_on_duplicate_keys)
-            except ValueError:
+            except json.JSONDecodeError:
                 error('invalid json')
                 return None
     except IOError:
